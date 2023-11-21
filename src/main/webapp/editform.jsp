@@ -45,6 +45,19 @@
 			background-color: #ccc;
 		}
 
+		input[type="button"]{
+			padding: 10px 20px;
+			cursor: pointer;
+			border-radius: 4px;
+			background-color: #f0f0f0;
+			color: #333;
+			border: none;
+		}
+
+		input[type="button"]:hover {
+			 background-color: #ccc;
+		}
+
 		a {
 			text-decoration: none;
 			padding: 5px 10px;
