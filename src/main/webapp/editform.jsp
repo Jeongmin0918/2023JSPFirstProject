@@ -70,7 +70,7 @@
 %>
 
 <h1>친구 정보 수정중...</h1>
-<form action="editpost.jsp" method="post" encType = "multipart/form-data">
+<form action="editpost.jsp" method="post">
 <input type="hidden" name="seq" value="<%=u.getSeq() %>"/>
 <table>
 	<tr><td>이름:</td><td><input type="text" name="name" value="<%= u.getName() %>"/></td></tr>
@@ -83,7 +83,6 @@
 	<tr><td>기독교/비기독교:</td><td><input type="text" name="christian" value="<%= u.getChristian() %>"/></td></tr>
 	<tr><td>생일:</td><td><input type="text" name="birthday" value="<%= u.getBirthday() %>"/></td></tr>
 	<tr><td>좋아하는계절:</td><td><input type="text" name="season" value="<%= u.getSeason() %>"/></td></tr>
-	<tr><td>이미지를 선택하세요 : <input type="file" name="img1" value="<%=u.getImg()%>"/></td></tr>
 <tr><td colspan="2"><input type="submit" value="수정 완료"/>
 <input type="button" value="수정 취소" onclick="history.back()"/></td></tr>
 </table>

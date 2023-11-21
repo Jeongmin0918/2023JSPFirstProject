@@ -14,7 +14,6 @@ public class FriendsVO {
     private String christian;
     private String birthday;
     private String season;
-    private String img;
     private Date regdate;
     private int cnt;
 
@@ -104,14 +103,6 @@ public class FriendsVO {
 
     public void setSeason(String season) {
         this.season = season;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
     }
 
     public Date getRegdate() {

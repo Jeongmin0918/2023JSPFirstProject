@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="com.example.jsphelloproject.FriendsDAO, com.example.jsphelloproject.FriendsVO,java.util.*"%>
-<%@ page import="java.io.File" %>
-<%@ page import="com.oreilly.servlet.MultipartRequest" %>
-<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -40,20 +37,6 @@
 </script>
 </head>
 <body>
-<%
-	String filename = "";
-	int sizeLimit = 15 * 1024 * 1024;
-
-	String realPath = request.getServletContext().getRealPath("upload");
-	File dir = new File(realPath);
-	if (!dir.exists()) dir.mkdirs();
-
-    DefaultFileRenamePolicy policy = new DefaultFileRenamePolicy();
-	MultipartRequest multipartRequest = null;
-	multipartRequest = new MultipartRequest(request, realPath, sizeLimit, "utf-8", policy);
-
-	filename = multipartRequest.getFilesystemName("img1");
-%>
 <h1>친구게시판</h1>
 <%
 	FriendsDAO friendsDAO = new FriendsDAO();
@@ -73,7 +56,6 @@
 	<th>기독교/비기독교</th>
 	<th>생일(YYYY-MM-DD)</th>
 	<th>좋아하는계절</th>
-	<th>캐릭터</th>
 	<th>등록날짜</th>
 	<th>수정</th>
 	<th>삭제</th>
@@ -91,7 +73,6 @@
 		<td>${u.getChristian()}</td>
 		<td>${u.getBirthday()}</td>
 		<td>${u.getSeason()}</td>
-		<td><img src = "${pageContext.request.contextPath}/upload/<%=filename%>" width="10" height="10"></td>
 		<td>${u.getRegdate()}</td>
 		<td><a href="editform.jsp?id=${u.getSeq()}">수정</a></td>
 		<td><a href="javascript:delete_ok('${u.getSeq()}')">삭제</a></td>

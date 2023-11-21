@@ -63,7 +63,7 @@
 <body>
 
 <h1>새로운 친구 등록</h1>
-<form action="addpost.jsp" method="post" encType = "multipart/form-data">
+<form action="addpost.jsp" method="post">
 <table>
     <tr><td>이름:</td><td><input type="text" name="name"/></td></tr>
     <tr><td>학번:</td><td><input type="text" name="student_num"/></td></tr>
@@ -75,7 +75,6 @@
     <tr><td>기독교/비기독교:</td><td><input type="text" name="christian"/></td></tr>
     <tr><td>생일:</td><td><input type="text" name="birthday"/></td></tr>
     <tr><td>좋아하는계절:</td><td><input type="text" name="season"/></td></tr>
-    <tr><td>이미지를 선택하세요 : <input type="file" name="img1" /></td></tr>
 
     <tr><td><a href="posts.jsp">모든 기록 조희</a></td><td align="right"><input type="submit" value="등록하기"/></td></tr>
 </table>

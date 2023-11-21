@@ -15,8 +15,8 @@ public class FriendsDAO {
     PreparedStatement stmt = null;
     ResultSet rs = null;
 
-    private final String friends_INSERT = "insert into friends (name, student_num, major, gender, age, hometown, dormitory, christian, birthday, season, img) values (?,?,?,?,?,?,?,?,?,?)";
-    private final String friends_UPDATE = "update friends set name=?, student_num=?, major=?, gender=?, age=?, hometown=?, dormitory=?, christian=?, birthday=?, season=?, img=? where seq=?";
+    private final String friends_INSERT = "insert into friends (name, student_num, major, gender, age, hometown, dormitory, christian, birthday, season) values (?,?,?,?,?,?,?,?,?,?)";
+    private final String friends_UPDATE = "update friends set name=?, student_num=?, major=?, gender=?, age=?, hometown=?, dormitory=?, christian=?, birthday=?, season=?, where seq=?";
     private final String friends_DELETE = "delete from friends  where seq=?";
     private final String friends_GET = "select * from friends  where seq=?";
     private final String friends_LIST = "select * from friends order by seq desc";
@@ -36,7 +36,6 @@ public class FriendsDAO {
             stmt.setString(8, vo.getChristian());
             stmt.setString(9, vo.getBirthday());
             stmt.setString(10, vo.getSeason());
-            stmt.setString(10, vo.getImg());
             stmt.executeUpdate();
             return 1;
         } catch (Exception e) {
@@ -72,8 +71,7 @@ public class FriendsDAO {
                 stmt.setString(8, vo.getChristian());
                 stmt.setString(9, vo.getBirthday());
                 stmt.setString(10, vo.getSeason());
-                stmt.setString(11, vo.getImg());
-                stmt.setInt(12, vo.getSeq());
+                stmt.setInt(11, vo.getSeq());
 
 
             System.out.println(vo.getName() + "-" + vo.getStudent_num() + "-" + vo.getMajor() + "-"
