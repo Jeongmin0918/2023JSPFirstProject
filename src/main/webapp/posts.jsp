@@ -28,6 +28,14 @@
   background-color: #808080;
   color: white;
 }
+.no-decoration:hover{
+	cursor: pointer;
+	color: orange;
+}
+.no-decoration {
+	text-decoration: none;
+	color: inherit;
+}
 </style>
 <script>
 	function delete_ok(id){
@@ -63,7 +71,7 @@
 <c:forEach items="${list}" var="u">
 	<tr>
 		<td>${u.getSeq()}</td>
-		<td>${u.getName()}</td>
+		<td><a href="view.jsp?id=${u.getSeq()}" class="no-decoration">${u.getName()}</a></td>
 		<td>${u.getStudent_num()}</td>
 		<td>${u.getMajor()}</td>
 		<td>${u.getGender()}</td>
